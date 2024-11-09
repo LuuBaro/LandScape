@@ -1,0 +1,666 @@
+<!-- Slide -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1000">
+            <img src="image/bds1.jpeg" class="d-block w-100" alt="">
+
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="image/bds2.jpg" class="d-block w-100" alt="">
+
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="image/bds3.png" class="d-block w-100" alt="">
+
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- form-select -->
+<div class="container-fluid green-br">
+    <form action="" class="container">
+        <div class="row align-items-end">
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <label for="inputGroupSelect01" class="form-label white-font">Chọn tỉnh/thành phố</label>
+                <div class="input-group ">
+                    <select class="form-select" id="inputGroupSelect01" aria-label="Example select with button addon">
+                        <option selected>Chọn tỉnh/thành phố</option>
+                        <option value="1">Cần Thơ</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <label for="inputGroupSelect02" class="form-label white-font">Chọn quận huyện</label>
+                <div class="input-group ">
+                    <select class="form-select" id="inputGroupSelect02" aria-label="Example select with button addon">
+                        <option selected>Chọn quận huyện</option>
+                        <option value="1">Ninh Kiều</option>
+                        <option value="2">Cái Răng</option>
+                        <option value="3">Ô Môn</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <label for="inputGroupSelect03" class="form-label white-font">Loại bất động sản</label>
+                <div class="input-group ">
+                    <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                        <option selected>Loại bất động sản</option>
+                        <option value="1">Căn hộ</option>
+                        <option value="2">Đất nền</option>
+                        <option value="3">Mặt bằng</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-3">
+                <button type="button" class="btn btn-success w-100">
+                    <i class="bi bi-search"></i> Tìm kiếm nhanh
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--Title-->
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="divider-wrapper">
+                <span class="section-title">DỰ ÁN NỔI BẬT</span>
+            </div>
+            <p class="section-subtitle">Tổng hợp các dự án bất động sản tại Hà Nội, Đà Nẵng, TP Hồ Chí Minh...và các
+                tỉnh thành khác hot nhất thời điểm hiện tại</p>
+        </div>
+    </div>
+</div>
+
+<!-- products.html -->
+<main class="container mb-3" ng-controller="productsController">
+
+    <div class="row">
+        <div class="col-6 col-md-4 col-xl-3 mb-3">
+            <div class="card">
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp </h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--Contact-->
+<div class="background-section d-flex align-items-center">
+    <div class="background-overlay"></div>
+    <div class="container content text-center">
+        <h2 class="mb-4">TRANG CHỦ</h2>
+        <p>Chúng tôi cung cấp đầy đủ và chính xác nhất thông tin các dự án bất động sản trên toàn quốc song hành với
+            dịch vụ tư vấn nhanh chóng và hiệu quả</p>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <!-- Biểu tượng có thể sử dụng font awesome hoặc các biểu tượng khác -->
+                        <i class="fas fa-cogs fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="ico">
+                            <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why1.png" alt="">
+                        </div>
+                        <div class="content_p">
+                            <h4>Chất lượng tốt nhất</h4>
+                            <p>Nghiên cứu, thiết kế và đầu tư xây dựng với hệ thống dịch vụ với chất lượng tốt nhất</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <i class="fas fa-search fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="ico"> <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why2.png"
+                                alt=""></div>
+                        <div class="content_p">
+                            <h4>Tìm kiếm thông tin dễ dàng</h4>
+                            <p>Tìm kiếm bất động sản bạn muốn theo danh mục cực kì dễ dàng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="ico">
+                            <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why3.png" alt="">
+                        </div>
+                        <div class="content_p">
+                            <h4>Kết nối với nhà đầu tư</h4>
+                            <p>Nhà đầu tư sẽ mang đến những sản phẩm và dịch vụ tốt nhất đáp ứng nhu cầu của bạn</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <i class="fas fa-wrench fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="ico">
+                            <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why4.png" alt="">
+                        </div>
+                        <div class="content_p">
+                            <h4>Tối ưu hóa dịch vụ</h4>
+                            <p>Nghiên cứu, phân tích, đánh giá nhu cầu của khách hàng một cách sâu sắc</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <i class="fas fa-shield-alt fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="ico">
+                            <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why5.png" alt="">
+                        </div>
+                        <div class="content_p">
+                            <h4>Đảm bảo quyền lợi khách hàng</h4>
+                            <p>Thực hiện các chương trình chăm sóc và gia tăng lợi ích cho khách hàng</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <div class="icon mr-3" style="color: #35bf76;">
+                        <i class="fas fa-clock fa-2x"></i>
+                    </div>
+                    <div class="d-flex">
+                        <div class="icon">
+                            <img src="https://bds05.mediawz.com/wp-content/uploads/2020/12/img_why6.png" alt="">
+                        </div>
+                        <div class="content_p">
+                            <h4>Tiết kiệm thời gian & chi phí</h4>
+                            <p>Cập nhật giá cả nhanh chóng và chính xác giúp bạn tiết kiệm chi phí hơn nhiều</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- products.html -->
+<main class="container mb-3" ng-controller="productsController">
+
+    <div class="row">
+        <div class="col-6 col-md-4 col-xl-3 mb-3">
+            <div class="card">
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp </h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-xl-3">
+            <div class="card">
+
+                <div class="box-img">
+                    <div class="crew hot">
+                        <span>Hot</span>
+                    </div>
+                    <a ng-click="showProductDetail(product.id)">
+                        <img class="w-100" src="image/productsjpg.jpg" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+                    <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+                        Đường Đào Trí P.Phú Thuận Q7</li>
+                    <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+                        Loại BDS: Căn hộ</li>
+                    <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+                        Diện tích: ~80m2</li>
+                </ul>
+                <div class="card-body d-flex jus-bw align-items-center">
+                    <div class="">
+                        <a class="card-link none"> 2 Tỷ</a>
+                    </div>
+                    <div>
+                        <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- -->
+<div class="hero-section mt-3">
+    <div class="overlay text-center">
+        <h1>Nhận thông tin nhà đất miễn phí</h1>
+        <p>Cập nhật hơn 1.000.000 thông tin mua bán và giao dịch nhà đất mỗi tháng tại 63 tỉnh thành phố trên cả nước
+        </p>
+        <form class="form-inline-custom custom-input-group container">
+            <div class="input-group ">
+                <input type="email" class="form-control rounded-3" placeholder="Nhập email của bạn"
+                    aria-label="Nhập email của bạn">
+                <button class="btn btn-success rounded-3 ms-3" type="submit">NHẬN TIN MIỄN PHÍ</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- info -->
+<div class="container mt-4">
+    <h2 class="mb-4">Tin tức thị trường</h2>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <img src="image/bdsft3.webp" alt="Tin tức 1">
+                        <div class="overlay">
+                            <h5>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h5>
+                            <div class="date">
+                                <i class="bi bi-calendar3"></i>
+                                <span>13 Tháng Tư, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="news-card">
+                        <img src="image/bdsft3.webp" alt="Tin tức 2">
+                        <div class="overlay">
+                            <h5>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h5>
+                            <div class="date">
+                                <i class="bi bi-calendar3"></i>
+                                <span>12 Tháng Tư, 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft_2.jpg" alt="Tin tức 3">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>11 Tháng Tư, 2021</span>
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft_1.jpg" alt="Tin tức 4">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>9 Tháng Tư, 2021</span>
+                                        </i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft3.webp" alt="Tin tức 5">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>8 Tháng Tư, 2021</span>
+                                        </i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft_4.jpg" alt="Tin tức 6">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>7 Tháng Tư, 2021</span>
+                                        </i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft_5.jpg" alt="Tin tức 7">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>10 Tháng Mười Hai, 2020</span>
+                                        </i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small-news-card">
+                                <img src="image/bdsft_6.jpg" alt="Tin tức 8">
+                                <div class="details">
+                                    <h6>Xuất hiện căn hộ cao cấp làm mê mẩn giới thượng lưu</h6>
+                                    <div class="date">
+                                        <i class="bi bi-calendar3">
+                                            <span>15 Tháng Mười Hai, 2020</span>
+                                        </i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="sidebar-ad">
+                <a href="">
+                    <img src="image/BANNER-370.jpg" alt="Quảng cáo">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- slide -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-xl-12 col-md-auto mb-3">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="row">
+                        <div class="col-xl-12 col-md-4">
+                            <div class="carousel-item info">
+                                <a class="ms-5" href="">
+                                    <img src="image/bds14.png" alt="Logo 1">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/BDS15.png" alt="Logo 2">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/bds321-logo.png" alt="Logo 3">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/ld01.png" alt="Logo 4">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/ld04.png" alt="Logo 5">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/LD07.png" alt="Logo 6">
+                                </a>
+                                <a class="ms-5" href="">
+                                    <img src="image/ld08.png" alt="Logo 7">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

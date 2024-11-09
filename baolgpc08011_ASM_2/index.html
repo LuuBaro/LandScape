@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" ng-app="asm2">
+
+<head>
+    <title>ASM 2 - PC08011</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="./angular.min.js"></script>
+    <script src="./angular-route.min.js"></script>
+
+</head>
+
+<body>
+
+    <header class="header" ng-include="'./layouts/header.html'"></header>
+    <div ng-view></div>
+
+    <footer class="footer" ng-include="'./layouts/footer.html'"></footer>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+        ng-controller="headerController">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="wrapper col-lg">
+                            <form id="loginForm" ng-submit="login()">
+                                <p class="form-login">Đăng nhập</p>
+                                <div class="input-box">
+                                    <input ng-model="loginUser" placeholder="Tên đăng nhập" type="text" />
+                                    <div class="error-message" id="loginUserError"></div>
+                                </div>
+                                <div class="input-box">
+                                    <input ng-model="loginPassword" id="loginPassword" placeholder="Mật khẩu"
+                                        type="password" autocomplete="off" />
+                                    <i class="bi bi-eye-slash toggle-password"
+                                        ng-click="togglePasswordVisibility('loginPassword')"></i>
+
+                                    <div class="error-message" id="loginPasswordError"></div>
+                                </div>
+                                <div class="remember-forgot">
+                                    <label><input type="checkbox" id="rememberPassword" />Ghi nhớ mật khẩu</label>
+                                    <a href="#" id="forgotPasswordLink">Quên mật khẩu</a>
+                                </div>
+                                <button class="btn" type="submit">Đăng nhập</button>
+                                <div class="register-link">
+                                    <p>Bạn chưa có tài khoản? <a href="#" data-bs-toggle="modal"
+                                            data-bs-target="#registerModal">Đăng ký</a></p>
+                                </div>
+                                <div class="error-message" id="loginSuccess"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true"
+        ng-controller="RegisterController">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="wrapper col-lg">
+                            <form id="registerForm" name="registerForm" ng-submit="register()" novalidate>
+                                <div class="input-box">
+                                    <input id="registerFullName" placeholder="Họ và tên" type="text"
+                                        class="form-control" ng-model="registerData.fullName" name="registerFullName"
+                                        required validate-field />
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerFullName.$error.required && registerForm.registerFullName.$touched">
+                                        Vui lòng nhập họ và tên!</small>
+                                </div>
+
+                                <div class="input-box">
+                                    <input id="registerNewUsername" placeholder="Tên đăng nhập" type="text"
+                                        class="form-control" ng-model="registerData.username" name="registerNewUsername"
+                                        required validate-field />
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerNewUsername.$error.required && registerForm.registerNewUsername.$touched">
+                                        Tên đăng nhập không được trống.</small>
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerNewUsername.$error.usernameExists && registerForm.registerNewUsername.$touched">
+                                        Tài khoản đã tồn tại.
+                                    </small>
+                                    <small class="text-danger"
+                                        ng-show="usernameExistsError && registerForm.registerNewUsername.$dirty">
+                                        Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.</small>
+                                </div>
+
+                                <div class="input-box">
+                                    <input id="registerNewPassword" placeholder="Mật khẩu" type="password"
+                                        class="form-control" ng-model="registerData.password" name="registerNewPassword"
+                                        required validate-field />
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerNewPassword.$error.required && registerForm.registerNewPassword.$touched">
+                                        Vui lòng nhập mật khẩu!</small>
+                                </div>
+
+                                <div class="input-box">
+                                    <input id="registerEmail" placeholder="Email" type="email" class="form-control"
+                                        ng-model="registerData.email" name="registerEmail" required validate-field />
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerEmail.$error.required && registerForm.registerEmail.$touched">
+                                        Vui lòng nhập địa chỉ email hợp lệ!</small>
+                                </div>
+
+                                <div class="input-box">
+                                    <input id="registerPhone" placeholder="Số điện thoại" type="text"
+                                        class="form-control" ng-model="registerData.phone" name="registerPhone" required
+                                        pattern="0[0-9]{9}" validate-field />
+                                    <small class="text-danger"
+                                        ng-show="registerForm.registerPhone.$error.required && registerForm.registerPhone.$touched">
+                                        Vui lòng nhập số điện thoại hợp lệ bắt đầu bằng số 0!</small>
+                                </div>
+
+                                <button class="btn btn-primary" type="submit">Đăng ký</button>
+
+                                <div class="register-link">
+                                    <p>Bạn đã có tài khoản? <a href="#" data-bs-toggle="modal"
+                                            data-bs-target="#loginModal">Đăng nhập</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Scroll to Top -->
+    <button class="btn scroll-custom scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i> <!-- Sử dụng Bootstrap Icons cho icon mũi tên -->
+    </button>
+
+    <a href="#!contact">
+        <div class="loader">
+            <span>liên hệ ngay</span>
+        </div>
+    </a>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <!-- Optional: Place to the bottom of scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>

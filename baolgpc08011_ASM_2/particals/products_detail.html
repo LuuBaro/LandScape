@@ -1,0 +1,190 @@
+<div class="background-section d-flex align-items-center">
+  <div class="background-overlay"></div>
+  <div class="container content text-center">
+    <h1>Quận 7 – Căn hộ cao cấp nhìn ra sông quận 7</h1>
+    <a href="#!/home">Trang chủ</a>
+    <i class="bi bi-caret-right-fill"></i>
+    <a href="#!/products">Căn hộ</a>
+    <i class="bi bi-caret-right-fill"></i>
+    <span>Quận 7 – Căn hộ cao cấp nhìn ra sông quận 7</span>
+
+  </div>
+</div>
+
+<div class="container mt-5" ng-repeat="products in productId">
+    <div class="row">
+        <div class="col-md-8">
+            <div ng-controller="productDetailController">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="slider-for">
+                        <div>
+                            <img class="d-block w-100" ng-src="{{products.images}}" alt="Slide image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="card-title fs">{{ products.title }}</h5>
+            <p><strong class="cl-bl">Diện tích:</strong> {{ products.area }}</p>
+            <p><strong class="cl-bl">Vị trí:</strong> {{ products.location }}</p>
+            <p><strong class="cl-bl">Loại BĐS:</strong> {{ products.type }}</p>
+            <p><strong class="cl-bl">Mô tả:</strong> {{ products.description }}</p>
+            <h6 class="cl-gr"><strong>Giá bán:</strong> {{ products.price }}</h6>
+            <a href="#" class="btn btn-gr">LIÊN HỆ NGAY</a>
+            <a href="#" class="btn btn-bl">ĐĂNG KÝ NHẬN TIN</a>
+        </div>
+    </div>
+
+    <div class="mt-4 mb-3">
+        <h5 class="bg-gr">MÔ TẢ</h5>
+        <div class="card rounded-0">
+            <div class="card-body">
+                <ul>
+                    <li class="list-unstyled">{{ products.product_des[0].tieuDe }}</li>
+                    <li class="list-unstyled" ng-repeat="noiDung in products.product_des[1].noiDung">{{ noiDung }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- products.html -->
+<main class="container mb-3" ng-controller="productsController">
+
+  <div class="row">
+    <div class="col-6 col-md-4 col-xl-3 mb-3">
+      <div class="card">
+        <div class="box-img">
+          <div class="crew hot">
+            <span>Hot</span>
+          </div>
+          <a ng-click="showProductDetail(product.id)">
+            <img class="w-100" src="image/productsjpg.jpg" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quận 7 – Căn hộ cao cấp </h5>
+          <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+            Đường Đào Trí P.Phú Thuận Q7</li>
+          <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+            Loại BDS: Căn hộ</li>
+          <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+            Diện tích: ~80m2</li>
+        </ul>
+        <div class="card-body d-flex jus-bw align-items-center">
+          <div class="">
+            <a class="card-link none"> 2 Tỷ</a>
+          </div>
+          <div>
+            <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-xl-3">
+      <div class="card">
+
+        <div class="box-img">
+          <div class="crew hot">
+            <span>Hot</span>
+          </div>
+          <a ng-click="showProductDetail(product.id)">
+            <img class="w-100" src="image/productsjpg.jpg" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+          <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+            Đường Đào Trí P.Phú Thuận Q7</li>
+          <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+            Loại BDS: Căn hộ</li>
+          <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+            Diện tích: ~80m2</li>
+        </ul>
+        <div class="card-body d-flex jus-bw align-items-center">
+          <div class="">
+            <a class="card-link none"> 2 Tỷ</a>
+          </div>
+          <div>
+            <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-xl-3">
+      <div class="card">
+
+        <div class="box-img">
+          <div class="crew hot">
+            <span>Hot</span>
+          </div>
+          <a ng-click="showProductDetail(product.id)">
+            <img class="w-100" src="image/productsjpg.jpg" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+          <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+            Đường Đào Trí P.Phú Thuận Q7</li>
+          <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+            Loại BDS: Căn hộ</li>
+          <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+            Diện tích: ~80m2</li>
+        </ul>
+        <div class="card-body d-flex jus-bw align-items-center">
+          <div class="">
+            <a class="card-link none"> 2 Tỷ</a>
+          </div>
+          <div>
+            <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6 col-md-4 col-xl-3">
+      <div class="card">
+
+        <div class="box-img">
+          <div class="crew hot">
+            <span>Hot</span>
+          </div>
+          <a ng-click="showProductDetail(product.id)">
+            <img class="w-100" src="image/productsjpg.jpg" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quận 7 – Căn hộ cao cấp</h5>
+          <p class="card-text">Điểm nổi bật của Q7 Saigon Riverside:</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="bi bi-pin-map" style="color: #35bf76;"></i>
+            Đường Đào Trí P.Phú Thuận Q7</li>
+          <li class="list-group-item"><i class="bi bi-house-door" style="color: #35bf76;"></i>
+            Loại BDS: Căn hộ</li>
+          <li class="list-group-item"><i class="bi bi-globe" style="color: #35bf76;"></i>
+            Diện tích: ~80m2</li>
+        </ul>
+        <div class="card-body d-flex jus-bw align-items-center">
+          <div class="">
+            <a class="card-link none"> 2 Tỷ</a>
+          </div>
+          <div>
+            <a ng-click="showProductDetail(product.id)" class="card-link btn btn-outline-success">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Quận 7 – Căn hộ cao cấp nhìn ra sông quận 7",
+      "area": "80m2",
+      "location": "Đường Đào Trí, P.Phú Thuận Q.7",
+      "type": "Căn hộ",
+      "price": "1,7 Tỷ",
+      "images": [
+        "https://bds05.mediawz.com/wp-content/uploads/2020/12/5-600x400.jpg"
+      ],
+      "description": "Dự án bom tấn Vincity Ocean Park, Gia Lâm, dự án hot nhất Bđs Hà Nội năm 2018 đang đếm ngược từng ngày ra mắt. Cơ hội sở hữu ở và đầu tư siêu lợi nhuận của các nhà đầu tư vào thị trường chung cư, biệt thự, shophouse, cho thuê, tích lũy trong những năm tới.",
+      "product_des": [
+        {
+          "tieuDe": "Điểm nổi bật của Q7 Saigon Riverside:"
+        },
+        {
+          "noiDung": [
+            "1/ Dự án là khu phức hợp căn hộ tốt nhất Việt Nam, biệt thự liền kề, khu dân trí cao, lối sống hiện đại, cao cấp.",
+            "2/ Căn hộ được thiết kế theo phong cách Châu Âu, tặng nội thất cao cấp:",
+            "– Cửa gỗ chống cháy và khóa từ 3 trong 1.",
+            "– Sàn gỗ cao cấp chuẩn Châu Âu, thiết bị điện Panasonic.",
+            "– Cửa sổ và balcony sử dụng khung nhôm tĩnh điện cao cấp.",
+            "– Bộ thiết bị vệ sinh cao cấp thương hiệu ToTo.",
+            "– Bộ nội thất bếp cao cấp Malloca: Máy hút khói, bếp từ, chậu rửa, vòi rửa, mặt đá cao cấp Solid Surface, kính cường lực ốp bếp.",
+            "– Hệ thống điều khiển thiết bị điện BKAV SmartHome.",
+            "– Internet an toàn G-Smart.",
+            "3/ Tích hợp hơn 50 tiện ích nội khu hiện đại, đẳng cấp: Hồ bơi Sky view, công viên, khu thương mại, khu thể thao đa năng, khu vui chơi trẻ em, quảng trường",
+            "Symphony, cầu khóa tình yêu, công viên nội khu, nhà hàng, gym, spa,…",
+            "4/ Ngân hàng hỗ trợ 70% trong 20 năm.",
+            "Thông tin dự án Q7 Saigon Riverside:",
+            "+ Vị trí: Đường Đào Trí, P.Phú Thuận, Q.7, TP. Hồ Chí Minh.",
+            "+ Diện tích: 75.224,5m2.",
+            "+ Số block căn hộ: 4 block.",
+            "+ Số tầng: 34 tầng.",
+            "+ Số căn hộ: 3.580 (4 block).",
+            "+ Tiện ích: 4 hồ bơi lớn nhỏ, 1 hồ cảnh quan xuyến suốt 4 block, công viên cảnh quan, vườn BBQ, 2 vườn tản bộ và 2 khu vui chơi trẻ em, quảng trường tổ chức lễ cho",
+            "các bé và cư dân, phòng gym, phòng yoga,…",
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}
